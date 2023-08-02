@@ -1,11 +1,26 @@
-import { Text, StyleSheet } from 'react-native';
-import { BellRegularIcon, ClockRegularIcon, GearSolidIcon, Greetings, Header, HomeContainer, IconContainer, IconGroup, RoundedTag, Tag, TagGroup, TagLabel, XMarkSolidIcon } from './styles';
 import { useState } from 'react';
-import Theme from '../../stylesheets/theme';
+import { StyleSheet, Text } from 'react-native';
+import Theme from './../../stylesheets/theme';
+import { BellRegularIcon, ClockRegularIcon, GearSolidIcon, Greetings, Header, HomeContainer, IconContainer, IconGroup, RoundedTag, Tag, TagGroup, TagLabel, XMarkSolidIcon } from './styles';
+
+type MixType = {
+  name: string;
+  imageUrl: string;
+}
+
+const mixesPath = './../../assets/images';
 
 const Home = () => {
   const [selectedFilter, setSelectedFilter] = useState<string | undefined>();
   const [filters] = useState<string[]>(['Música', 'Podcasts e programas']);
+  const [mixes] = useState<MixType[]>([
+    { name: 'Músicas Curtidas',       imageUrl: `${mixesPath}/musicas-curtidas.png` },
+    { name: 'Mix romântico',          imageUrl: `${mixesPath}/mix-romantico.jpeg` },
+    { name: 'Mix relax',              imageUrl: `${mixesPath}/mix-relax.jpeg` },
+    { name: 'Daily Mix 1',            imageUrl: `${mixesPath}/daily-mix-1.jpeg` },
+    { name: 'Mix de Kings of Leon',   imageUrl: `${mixesPath}/mix-de-kings-of-leon.jpeg` },
+    { name: 'Adeus, Aurora (Deluxe)', imageUrl: `${mixesPath}/adeus-aurora-deluxe.jpeg` }
+  ]);
 
   const openNotifications = () => {}
 
@@ -71,9 +86,9 @@ const styles = StyleSheet.create({
   tagGroup: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingTop: 8,
+    paddingTop: 16,
     paddingRight: 0,
-    paddingBottom: 8,
+    paddingBottom: 16,
     paddingLeft: 0,
   },
 

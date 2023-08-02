@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components/native';
-import RawBellRegularIcon from '../../components/icons/BellRegular';
-import RawClockRegularIcon from '../../components/icons/ClockRegular';
-import RawGearSolidIcon from '../../components/icons/GearSolid';
-import RawXMarkSolidIcon from '../../components/icons/XMarkSolid';
+import RawBellRegularIcon from './../../components/icons/BellRegular';
+import RawClockRegularIcon from './../../components/icons/ClockRegular';
+import RawGearSolidIcon from './../../components/icons/GearSolid';
+import RawXMarkSolidIcon from './../../components/icons/XMarkSolid';
 
 export const HomeContainer = styled.ScrollView`
   background-color: ${({ theme }) => theme.colors.black};
@@ -85,4 +85,10 @@ export const XMarkSolidIcon = styled(RawXMarkSolidIcon)`
   height: 20px;
 
   fill: ${({ theme }) => theme.colors.white};
+`;
+
+export const MixGroup = styled.View`
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
 `;

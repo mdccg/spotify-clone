@@ -1,6 +1,6 @@
 import { StatusBar as ExpoStatusBar } from 'expo-status-bar';
 import { StatusBar as ReactNativeStatusBar, View } from 'react-native';
-import Theme from '../../stylesheets/theme';
+import Theme from './../../stylesheets/theme';
 
 const StatusBar = () => (
   <>
