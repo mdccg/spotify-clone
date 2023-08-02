@@ -14,8 +14,9 @@
 
 ## *To-do list*
 
-- [ ] Mudar a paleta de cores
- 
+- [X] Mudar a paleta de cores
+- [ ] Fazer com que o componente `TagGroup` seja fixo somente ao rolar a tela para baixo
+
 ## Motivação
 
 ## Pilha de tecnologia

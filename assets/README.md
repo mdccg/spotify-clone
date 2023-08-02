@@ -13,3 +13,4 @@
 - [Bell Classic Regular Icon | Font Awesome](https://fontawesome.com/icons/bell?f=classic&s=regular)
 - [Clock Classic Regular Icon | Font Awesome](https://fontawesome.com/icons/clock?f=classic&s=regular)
 - [Gear Classic Solid Icon | Font Awesome](https://fontawesome.com/icons/gear?f=classic&s=solid)
+- [Xmark Classic Solid Icon | Font Awesome](https://fontawesome.com/icons/xmark?f=classic&s=solid)
