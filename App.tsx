@@ -6,7 +6,6 @@ import { ThemeProvider } from 'styled-components/native';
 import Theme from './src/stylesheets/theme';
 import Home from './src/screens/Home';
 import StatusBar from './src/components/StatusBar';
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -47,9 +46,7 @@ const App = () => {
       <StatusBar />
 
       <ThemeProvider theme={Theme}>
-        <GestureHandlerRootView style={{ flex: 1 }}>
-          <Home />
-        </GestureHandlerRootView>
+        <Home />
       </ThemeProvider>
     </SafeAreaView>
   );

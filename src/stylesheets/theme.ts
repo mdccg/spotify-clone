@@ -24,8 +24,9 @@ const Theme = {
   
   colors: {
     green: '#1db954',
-    gray: '#212121',
     black: '#121212',
+    gray: '#212121',
+    lightgray: '#B3B3B3',
     white: '#FAFAFA',
   }
 };
