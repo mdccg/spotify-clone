@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components/native';
-import RawEllipsisSolidIcon from '../../components/icons/EllipsisSolid';
 import RawBellRegularIcon from './../../components/icons/BellRegular';
 import RawClockRegularIcon from './../../components/icons/ClockRegular';
+import RawEllipsisSolidIcon from './../../components/icons/EllipsisSolid';
 import RawGearSolidIcon from './../../components/icons/GearSolid';
 import RawXMarkSolidIcon from './../../components/icons/XMarkSolid';
 
@@ -87,14 +87,14 @@ export const XMarkSolidIcon = styled(RawXMarkSolidIcon)`
   fill: ${({ theme }) => theme.colors.white};
 `;
 
-export const MixGroup = styled.View`
+export const HighlightedMixGroup = styled.View`
   margin: 8px 0;
 
   flex-direction: row;
   align-items: center;
 `;
 
-export const MixColumn = styled.View`
+export const HighlightedMixColumn = styled.View`
   flex: 1;
 `;
 
@@ -102,7 +102,7 @@ export const GapBetweenColumns = styled.View`
   width: 8px;
 `;
 
-export const MixContainer = styled.TouchableOpacity`
+export const HighlightedMix = styled.TouchableOpacity`
   background-color: ${({ theme }) => theme.colors.gray};
   border-radius: 4px;
 
@@ -113,7 +113,7 @@ export const MixContainer = styled.TouchableOpacity`
   margin-bottom: 8px;
 `;
 
-export const MixImage = styled.Image`
+export const HighlightedMixImage = styled.Image`
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
 
@@ -123,7 +123,7 @@ export const MixImage = styled.Image`
   margin-right: 12px;
 `;
 
-export const MixTitle = styled.Text`
+export const HighlightedMixTitle = styled.Text`
   font-family: ${({ theme }) => theme.fonts.gotham.gothamBold};
   color: ${({ theme }) => theme.colors.white};
   font-size: 12px;
@@ -132,11 +132,7 @@ export const MixTitle = styled.Text`
   line-height: 18px;
 `;
 
-MixTitle.defaultProps = {
-  numberOfLines: 2,
-};
-
-export const MixIsPlayingContainer = styled.View`
+export const HighlightedMixIsPlayingContainer = styled.View`
   padding-right: 4px;
 `;
 
@@ -157,18 +153,24 @@ export const FavoriteArtistsHeading = styled(Greetings)`
 
 export const Carousel = styled.ScrollView``;
 
-export const CarouselItem = styled.TouchableOpacity`
+export const Mix = styled.TouchableOpacity`
   margin-right: 16px;
 `;
 
-export const CarouselImage = styled.Image`
+export const MixImage = styled.Image`
   width:  150px;
   height: 150px;
 `;
 
-export const CarouselDescription = styled.Text`
-  margin-top: 8px;
+export const MixTitle = styled.Text`
+  margin: 12px 0 2px;
 
+  font-family: ${({ theme }) => theme.fonts.gotham.gothamBold};
+  color: ${({ theme }) => theme.colors.white};
+  font-size: 12px;
+`;
+
+export const MixDescription = styled.Text`
   width: 150px;
 
   font-family: ${({ theme }) => theme.fonts.gotham.gothamBook};
@@ -178,9 +180,9 @@ export const CarouselDescription = styled.Text`
   line-height: 20px;
 `;
 
-CarouselDescription.defaultProps = {
-  numberOfLines: 2,
-};
+export const MixDescriptionWithoutTitle = styled(MixDescription)`
+  margin-top: 8px;
+`;
 
 export const Artist = styled.TouchableOpacity`
   flex-direction: column;
@@ -204,6 +206,42 @@ export const ArtistName = styled.Text`
   font-size: 14px;
 `;
 
-export const Footer = styled.View`
-  height: 128px;
+export const LooksLikeContainer = styled.View`
+  margin: 48px 0 20px;
+
+  flex-direction: row;
+  align-items: center;
 `;
+
+export const LooksLikePicture = styled.Image`
+  width:  48px;
+  height: 48px;
+
+  border-radius: 24px;
+
+  margin-right: 8px;
+`;
+
+export const LooksLikeLabelContainer = styled.View``;
+
+export const LooksLikeLabel = styled.Text`
+  font-family: ${({ theme }) => theme.fonts.gotham.gothamBook};
+  color: ${({ theme }) => theme.colors.lightgray};
+  font-size: 12px;
+
+  text-transform: uppercase;
+`;
+
+export const LooksLikeArtistName = styled.Text`
+  margin-top: 2px;
+
+  font-family: ${({ theme }) => theme.fonts.gotham.gotham_Bold};
+  color: ${({ theme }) => theme.colors.white};
+  font-size: 22px;
+`;
+
+[HighlightedMixTitle, MixDescription, MixDescriptionWithoutTitle].map((element) => {
+  element.defaultProps = {
+    numberOfLines: 2,
+  };
+});

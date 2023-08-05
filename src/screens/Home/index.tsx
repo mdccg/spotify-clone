@@ -1,31 +1,41 @@
 import { useState } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 import AdeusAuroraDeluxe from './../../../assets/images/adeus-aurora-deluxe.jpeg';
+import ArcticMonkeys from './../../../assets/images/arctic-monkeys.jpeg';
+import D4vd from './../../../assets/images/d4vd.jpeg';
 import DailyMix1 from './../../../assets/images/daily-mix-1.jpeg';
+import FujiiKaze from './../../../assets/images/fujii-kaze.jpeg';
+import Grentperez from './../../../assets/images/grentperez.jpeg';
+import JoeHisaishi from './../../../assets/images/joe-hisaishi.jpeg';
+import Kamaitachi from './../../../assets/images/kamaitachi.jpeg';
+import MikiMatsubara from './../../../assets/images/miki-matsubara.jpeg';
 import MixAnos2010 from './../../../assets/images/mix-anos-2010.jpeg';
 import MixAnos70 from './../../../assets/images/mix-anos-70.jpeg';
-import MixRock from './../../../assets/images/mix-rock.jpeg';
-import MixIndie from './../../../assets/images/mix-indie.jpeg';
-import MixMpb from './../../../assets/images/mix-mpb.jpeg';
-import MixPop from './../../../assets/images/mix-pop.jpeg';
 import MixDeArcticMonkeys from './../../../assets/images/mix-de-arctic-monkeys.jpeg';
 import MixDeKingsOfLeon from './../../../assets/images/mix-de-kings-of-leon.jpeg';
 import MixDeVansire from './../../../assets/images/mix-de-vansire.jpeg';
+import MixIndie from './../../../assets/images/mix-indie.jpeg';
+import MixMpb from './../../../assets/images/mix-mpb.jpeg';
+import MixPop from './../../../assets/images/mix-pop.jpeg';
 import MixRelax from './../../../assets/images/mix-relax.jpeg';
+import MixRock from './../../../assets/images/mix-rock.jpeg';
 import MixRomantico from './../../../assets/images/mix-romantico.jpeg';
 import MusicasCurtidas from './../../../assets/images/musicas-curtidas.png';
-import Theme from './../../stylesheets/theme';
-import Grentperez from './../../../assets/images/grentperez.jpeg';
-import FujiiKaze from './../../../assets/images/fujii-kaze.jpeg';
-import MikiMatsubara from './../../../assets/images/miki-matsubara.jpeg';
-import D4vd from './../../../assets/images/d4vd.jpeg';
-import ArcticMonkeys from './../../../assets/images/arctic-monkeys.jpeg';
-import Kamaitachi from './../../../assets/images/kamaitachi.jpeg';
-import JoeHisaishi from './../../../assets/images/joe-hisaishi.jpeg';
 import TheWeeknd from './../../../assets/images/the-weeknd.jpeg';
 import TimMaia from './../../../assets/images/tim-maia.jpeg';
 import ViniciusMaeda from './../../../assets/images/vinicius-maeda.png';
-import { BellRegularIcon, Carousel, CarouselDescription, CarouselImage, CarouselItem, ClockRegularIcon, EllipsisSolidIcon, FavoriteArtistsHeading, GearSolidIcon, Greetings, Header, Heading, HomeContainer, IconContainer, IconGroup, MixColumn, GapBetweenColumns, MixContainer, MixGroup, MixImage, MixIsPlayingContainer, MixTitle, RoundedTag, Tag, TagGroup, TagLabel, XMarkSolidIcon, Artist, ArtistName, ArtistPicture, Footer } from './styles';
+import Theme from './../../stylesheets/theme';
+import MrsMagicSingleStrawberryGuy from './../../../assets/images/mrs-magic_single_strawberry-guy.jpeg';
+import FSongSingleStrawberryGuy from './../../../assets/images/f-song_single_strawberry-guy.jpeg';
+import WelcomeAndGoodbyeSingleDreamIvory from './../../../assets/images/welcome-and-goodbye_single_dream-ivory.jpeg';
+import IndieGaming from './../../../assets/images/indie-gaming.jpeg';
+import LoFiIndie from './../../../assets/images/lo-fi-indie.jpeg';
+import Boa from './../../../assets/images/boa.jpeg';
+import Roar from './../../../assets/images/roar.jpeg';
+import Duster from './../../../assets/images/duster.jpeg';
+import EyedressRadio from './../../../assets/images/eyedress-radio.jpeg';
+import Eyedress from './../../../assets/images/eyedress.jpeg';
+import { Artist, ArtistName, ArtistPicture, BellRegularIcon, Carousel, ClockRegularIcon, EllipsisSolidIcon, FavoriteArtistsHeading, GapBetweenColumns, GearSolidIcon, Greetings, Header, Heading, HighlightedMix, HighlightedMixColumn, HighlightedMixGroup, HighlightedMixImage, HighlightedMixIsPlayingContainer, HighlightedMixTitle, HomeContainer, IconContainer, IconGroup, LooksLikeArtistName, LooksLikeContainer, LooksLikeLabel, LooksLikeLabelContainer, LooksLikePicture, Mix, MixDescription, MixDescriptionWithoutTitle, MixImage, MixTitle, RoundedTag, Tag, TagGroup, TagLabel, XMarkSolidIcon } from './styles';
 
 const Home = () => {
   const [selectedFilter, setSelectedFilter] = useState<string | undefined>();
@@ -85,99 +95,99 @@ const Home = () => {
           })}
         </TagGroup>
 
-        <MixGroup>
-          <MixColumn>
-            <MixContainer>
-              <MixImage source={MusicasCurtidas} />
-              <MixTitle>Músicas Curtidas</MixTitle>
-              <MixIsPlayingContainer>
+        <HighlightedMixGroup>
+          <HighlightedMixColumn>
+            <HighlightedMix>
+              <HighlightedMixImage source={MusicasCurtidas} />
+              <HighlightedMixTitle>Músicas Curtidas</HighlightedMixTitle>
+              <HighlightedMixIsPlayingContainer>
                 <EllipsisSolidIcon />
-              </MixIsPlayingContainer>
-            </MixContainer>
+              </HighlightedMixIsPlayingContainer>
+            </HighlightedMix>
 
-            <MixContainer>
-              <MixImage source={MixRelax} />
-              <MixTitle>Mix relax</MixTitle>
-            </MixContainer>
+            <HighlightedMix>
+              <HighlightedMixImage source={MixRelax} />
+              <HighlightedMixTitle>Mix relax</HighlightedMixTitle>
+            </HighlightedMix>
 
-            <MixContainer>
-              <MixImage source={MixDeKingsOfLeon} />
-              <MixTitle>Mix de Kings of Leon</MixTitle>
-            </MixContainer>
-          </MixColumn>
+            <HighlightedMix>
+              <HighlightedMixImage source={MixDeKingsOfLeon} />
+              <HighlightedMixTitle>Mix de Kings of Leon</HighlightedMixTitle>
+            </HighlightedMix>
+          </HighlightedMixColumn>
 
           <GapBetweenColumns />
 
-          <MixColumn>
-            <MixContainer>
-              <MixImage source={MixRomantico} />
-              <MixTitle>Mix romântico</MixTitle>
-            </MixContainer>
+          <HighlightedMixColumn>
+            <HighlightedMix>
+              <HighlightedMixImage source={MixRomantico} />
+              <HighlightedMixTitle>Mix romântico</HighlightedMixTitle>
+            </HighlightedMix>
 
-            <MixContainer>
-              <MixImage source={DailyMix1} />
-              <MixTitle>Daily Mix 1</MixTitle>
-            </MixContainer>
+            <HighlightedMix>
+              <HighlightedMixImage source={DailyMix1} />
+              <HighlightedMixTitle>Daily Mix 1</HighlightedMixTitle>
+            </HighlightedMix>
 
-            <MixContainer>
-              <MixImage source={AdeusAuroraDeluxe} />
-              <MixTitle>Adeus, Aurora (Deluxe)</MixTitle>
-            </MixContainer>
-          </MixColumn>
-        </MixGroup>
+            <HighlightedMix>
+              <HighlightedMixImage source={AdeusAuroraDeluxe} />
+              <HighlightedMixTitle>Adeus, Aurora (Deluxe)</HighlightedMixTitle>
+            </HighlightedMix>
+          </HighlightedMixColumn>
+        </HighlightedMixGroup>
 
         <Heading>Seus mixes mais ouvidos</Heading>
 
         <Carousel horizontal>
-          <CarouselItem>
-            <CarouselImage source={MixRock} />
-            <CarouselDescription>STARSET, Danger Danger, Linkin Park e mais</CarouselDescription>
-          </CarouselItem>
+          <Mix>
+            <MixImage source={MixRock} />
+            <MixDescriptionWithoutTitle>STARSET, Danger Danger, Linkin Park e mais</MixDescriptionWithoutTitle>
+          </Mix>
 
-          <CarouselItem>
-            <CarouselImage source={MixIndie} />
-            <CarouselDescription>The Rare Occasions, boy pablo, The Neighbourhood e mais</CarouselDescription>
-          </CarouselItem>
+          <Mix>
+            <MixImage source={MixIndie} />
+            <MixDescriptionWithoutTitle>The Rare Occasions, boy pablo, The Neighbourhood e mais</MixDescriptionWithoutTitle>
+          </Mix>
 
-          <CarouselItem>
-            <CarouselImage source={MixDeVansire} />
-            <CarouselDescription>Matt Maltese, boy pablo e Hotel Ugly</CarouselDescription>
-          </CarouselItem>
+          <Mix>
+            <MixImage source={MixDeVansire} />
+            <MixDescriptionWithoutTitle>Matt Maltese, boy pablo e Hotel Ugly</MixDescriptionWithoutTitle>
+          </Mix>
 
-          <CarouselItem>
-            <CarouselImage source={MixAnos2010} />
-            <CarouselDescription>The Weeknd, Coldplay, The Technicolors e mais</CarouselDescription>
-          </CarouselItem>
+          <Mix>
+            <MixImage source={MixAnos2010} />
+            <MixDescriptionWithoutTitle>The Weeknd, Coldplay, The Technicolors e mais</MixDescriptionWithoutTitle>
+          </Mix>
 
-          <CarouselItem>
-            <CarouselImage source={MixRelax} />
-            <CarouselDescription>Vansire, Lena Raine, Tyler, The Creator e mais</CarouselDescription>
-          </CarouselItem>
+          <Mix>
+            <MixImage source={MixRelax} />
+            <MixDescriptionWithoutTitle>Vansire, Lena Raine, Tyler, The Creator e mais</MixDescriptionWithoutTitle>
+          </Mix>
 
-          <CarouselItem>
-            <CarouselImage source={MixMpb} />
-            <CarouselDescription>Armandinho, kamaitachi, Supercombo e mais</CarouselDescription>
-          </CarouselItem>
+          <Mix>
+            <MixImage source={MixMpb} />
+            <MixDescriptionWithoutTitle>Armandinho, kamaitachi, Supercombo e mais</MixDescriptionWithoutTitle>
+          </Mix>
 
-          <CarouselItem>
-            <CarouselImage source={MixDeArcticMonkeys} />
-            <CarouselDescription>Eyedress, TV Girl e Cigarettes After Sex</CarouselDescription>
-          </CarouselItem>
+          <Mix>
+            <MixImage source={MixDeArcticMonkeys} />
+            <MixDescriptionWithoutTitle>Eyedress, TV Girl e Cigarettes After Sex</MixDescriptionWithoutTitle>
+          </Mix>
 
-          <CarouselItem>
-            <CarouselImage source={MixAnos70} />
-            <CarouselDescription>Tim Maia, KISS, Van Halen e mais</CarouselDescription>
-          </CarouselItem>
+          <Mix>
+            <MixImage source={MixAnos70} />
+            <MixDescriptionWithoutTitle>Tim Maia, KISS, Van Halen e mais</MixDescriptionWithoutTitle>
+          </Mix>
 
-          <CarouselItem>
-            <CarouselImage source={MixRomantico} />
-            <CarouselDescription>Matt Maltese, Laufey, Christopher Cross e mais</CarouselDescription>
-          </CarouselItem>
+          <Mix>
+            <MixImage source={MixRomantico} />
+            <MixDescriptionWithoutTitle>Matt Maltese, Laufey, Christopher Cross e mais</MixDescriptionWithoutTitle>
+          </Mix>
 
-          <CarouselItem style={styles.lastCarouselItem}>
-            <CarouselImage source={MixPop} />
-            <CarouselDescription>OneRepublic, Harry Styles, Taylor Swift e mais</CarouselDescription>
-          </CarouselItem>
+          <Mix style={styles.lastCarouselItem}>
+            <MixImage source={MixPop} />
+            <MixDescriptionWithoutTitle>OneRepublic, Harry Styles, Taylor Swift e mais</MixDescriptionWithoutTitle>
+          </Mix>
         </Carousel>
 
         <FavoriteArtistsHeading>Seus artistas favoritos</FavoriteArtistsHeading>
@@ -232,6 +242,64 @@ const Home = () => {
             <ArtistPicture source={ViniciusMaeda} />
             <ArtistName>Vinicius Maeda</ArtistName>
           </Artist>
+        </Carousel>
+
+        <LooksLikeContainer>
+          <LooksLikePicture source={Eyedress} />
+          <LooksLikeLabelContainer>
+            <LooksLikeLabel>Parecido com</LooksLikeLabel>
+            <LooksLikeArtistName>Eyedress</LooksLikeArtistName>
+          </LooksLikeLabelContainer>
+        </LooksLikeContainer>
+
+        <Carousel horizontal>
+          <Mix>
+            <MixImage source={MrsMagicSingleStrawberryGuy} />
+            <MixTitle>Mrs Magic</MixTitle>
+            <MixDescription>Single • Strawberry Guy</MixDescription>
+          </Mix>
+
+          <Mix>
+            <MixImage source={FSongSingleStrawberryGuy} />
+            <MixTitle>F Song</MixTitle>
+            <MixDescription>Single • Strawberry Guy</MixDescription>
+          </Mix>
+
+          <Mix>
+            <MixImage source={WelcomeAndGoodbyeSingleDreamIvory} />
+            <MixTitle>welcome and goodbye</MixTitle>
+            <MixDescription>Single • Dream, Ivory</MixDescription>
+          </Mix>
+
+          <Mix>
+            <MixImage source={IndieGaming} />
+            <MixDescriptionWithoutTitle>Arctic Monkeys, Tyler, The Creator, The Neighbourhood e mais</MixDescriptionWithoutTitle>
+          </Mix>
+
+          <Mix>
+            <MixImage source={LoFiIndie} />
+            <MixDescriptionWithoutTitle>Cigarettes After Sex, d4vd, Clairo, beabadoobee e mais</MixDescriptionWithoutTitle>
+          </Mix>
+
+          <Artist>
+            <ArtistPicture source={Boa} />
+            <ArtistName>bôa</ArtistName>
+          </Artist>
+
+          <Artist>
+            <ArtistPicture source={Roar} />
+            <ArtistName>Roar</ArtistName>
+          </Artist>
+
+          <Artist>
+            <ArtistPicture source={Duster} />
+            <ArtistName>Duster</ArtistName>
+          </Artist>
+
+          <Mix style={styles.lastCarouselItem}>
+            <MixImage source={EyedressRadio} />
+            <MixDescriptionWithoutTitle>Steve Lacy, Cigarettes After Sex, Mac DeMarco e mais</MixDescriptionWithoutTitle>
+          </Mix>
         </Carousel>
       </HomeContainer>
     </>
