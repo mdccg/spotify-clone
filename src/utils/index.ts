@@ -1,3 +1,6 @@
+import ArtistType from './../types/ArtistType';
+import MixType from './../types/MixType';
+
 export const getGreetings = (): string => {
   const hour = new Date().getHours();
 
@@ -12,3 +15,5 @@ export const getGreetings = (): string => {
 
   }
 }
+
+export const isArtist = (object: MixType | ArtistType): object is ArtistType => 'name' in object;

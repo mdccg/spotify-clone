@@ -4,7 +4,7 @@ import { Controls, HeartSolidIcon, IconContainer, MusicAuthor, MusicDetails, Mus
 import HeartRegularIcon from './../icons/HeartRegular';
 import Theme from './../../stylesheets/theme';
 import { Audio } from 'expo-av';
-import AvPlaybackStatus from '../../types/AvPlaybackStatus';
+import AvPlaybackStatus from './../../types/AvPlaybackStatus';
 
 const Player = () => {
   const [music, setMusic] = useState<Audio.Sound | undefined>();
