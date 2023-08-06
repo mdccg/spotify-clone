@@ -308,7 +308,7 @@ const Home = () => {
 
 const styles = StyleSheet.create({
   homeContainer: {
-    paddingBottom: 72,
+    paddingBottom: 128,
   },
 
   tagGroup: {

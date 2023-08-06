@@ -1,11 +1,12 @@
+import { NavigationContainer } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import { useCallback } from 'react';
 import { SafeAreaView } from 'react-native';
 import { ThemeProvider } from 'styled-components/native';
-import Theme from './src/stylesheets/theme';
-import Home from './src/screens/Home';
 import StatusBar from './src/components/StatusBar';
+import BottomTabNavigator from './src/navigation/BottomTabNavigator';
+import Theme from './src/stylesheets/theme';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -46,7 +47,9 @@ const App = () => {
       <StatusBar />
 
       <ThemeProvider theme={Theme}>
-        <Home />
+        <NavigationContainer>
+          <BottomTabNavigator />
+        </NavigationContainer>
       </ThemeProvider>
     </SafeAreaView>
   );

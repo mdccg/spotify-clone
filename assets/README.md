@@ -15,3 +15,6 @@
 - [Gear Classic Solid Icon | Font Awesome](https://fontawesome.com/icons/gear?f=classic&s=solid)
 - [Xmark Classic Solid Icon | Font Awesome](https://fontawesome.com/icons/xmark?f=classic&s=solid)
 - [Ellipsis Classic Solid Icon | Font Awesome](https://fontawesome.com/icons/ellipsis?f=classic&s=solid)
+- [House Classic Solid Icon | Font Awesome](https://fontawesome.com/icons/house?f=classic&s=solid)
+- [Magnifying Glass Classic Solid Icon | Font Awesome](https://fontawesome.com/icons/magnifying-glass?f=classic&s=solid)
+- [Swatchbook Classic Solid Icon | Font Awesome](https://fontawesome.com/icons/swatchbook?f=classic&s=solid)

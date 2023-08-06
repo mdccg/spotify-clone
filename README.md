@@ -15,6 +15,7 @@
 ## *To-do list*
 
 - [X] Mudar a paleta de cores
+- [X] Remover `expo-blur`
 - [ ] Fazer com que o componente `TagGroup` seja fixo somente ao rolar a tela para baixo
 
 ## Motivação
