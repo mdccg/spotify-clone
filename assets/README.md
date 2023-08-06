@@ -18,3 +18,7 @@
 - [House Classic Solid Icon | Font Awesome](https://fontawesome.com/icons/house?f=classic&s=solid)
 - [Magnifying Glass Classic Solid Icon | Font Awesome](https://fontawesome.com/icons/magnifying-glass?f=classic&s=solid)
 - [Swatchbook Classic Solid Icon | Font Awesome](https://fontawesome.com/icons/swatchbook?f=classic&s=solid)
+- [Heart Classic Solid Icon | Font Awesome](https://fontawesome.com/icons/heart?f=classic&s=solid)
+- [Heart Classic Regular Icon | Font Awesome](https://fontawesome.com/icons/heart?f=classic&s=regular)
+- [Pause Classic Solid Icon | Font Awesome](https://fontawesome.com/icons/pause?f=classic&s=solid)
+- [Play Classic Solid Icon | Font Awesome](https://fontawesome.com/icons/play?f=classic&s=solid)

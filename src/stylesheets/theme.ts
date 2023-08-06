@@ -28,6 +28,8 @@ const Theme = {
     gray: '#212121',
     lightgray: '#B3B3B3',
     white: '#FAFAFA',
+    purple: '#36105B',
+    lightpurple: '#501888',
   }
 };
 

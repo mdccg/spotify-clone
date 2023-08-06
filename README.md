@@ -20,6 +20,12 @@
 
 ## Motivação
 
+Este app é um clone simples do Spotify, projetado para simular de forma básica a experiência do aplicativo original. É importante notar que este clone não possui acesso à API do Spotify e, portanto, não é capaz de reproduzir músicas ou fornecer conteúdo em tempo real.
+
+O objetivo deste clone é oferecer uma interface minimalista, permitindo que os usuários naveguem pelas principais seções do aplicativo, como a página inicial, listas de reprodução, artistas e álbuns. Apesar de não possuir recursos avançados ou funcionalidades completas, o aplicativo busca fornecer uma visão geral do design e da estrutura do Spotify original.
+
+Este clone é desenvolvido como uma aplicação frontend, o que significa que não há integração com servidores ou bancos de dados. Todos os dados são estáticos e previamente definidos no código. Portanto, o app não oferece recursos de busca, login ou reprodução de músicas.
+
 Este foi o primeiro repositório de código apresentado no [Curso Superior de TSI](https://www.ifms.edu.br/campi/campus-aquidauana/cursos/graduacao/sistemas-para-internet/sistemas-para-internet) do IFMS como requisito para obtenção da nota parcial das atividades da unidade curricular Programação para Dispositivos Móveis II.
 
 | [Próximo repositório &rarr;](#) |

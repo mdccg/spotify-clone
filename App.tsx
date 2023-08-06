@@ -7,6 +7,7 @@ import { ThemeProvider } from 'styled-components/native';
 import StatusBar from './src/components/StatusBar';
 import BottomTabNavigator from './src/navigation/BottomTabNavigator';
 import Theme from './src/stylesheets/theme';
+import Player from './src/components/Player';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -49,6 +50,7 @@ const App = () => {
       <ThemeProvider theme={Theme}>
         <NavigationContainer>
           <BottomTabNavigator />
+          <Player />
         </NavigationContainer>
       </ThemeProvider>
     </SafeAreaView>

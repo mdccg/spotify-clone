@@ -137,8 +137,10 @@ export const HighlightedMixIsPlayingContainer = styled.View`
 `;
 
 export const EllipsisSolidIcon = styled(RawEllipsisSolidIcon)`
-  width:  16px;
-  height: 16px;
+  margin-top: 8px;
+
+  width:  12px;
+  height: 12px;
 
   fill: ${({ theme }) => theme.colors.green};
 `;

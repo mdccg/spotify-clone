@@ -30,10 +30,7 @@ const BottomTabNavigator = () => {
         options={{
           tabBarLabel: 'Início',
           tabBarIcon: ({ color, size }) => (
-            <HouseSolidIcon
-              fill={color}
-              width={size}
-              height={size} />
+            <HouseSolidIcon fill={color} width={size} height={size} />
           )
         }} />
 
@@ -43,10 +40,7 @@ const BottomTabNavigator = () => {
         options={{
           tabBarLabel: 'Buscar',
           tabBarIcon: ({ color, size }) => (
-            <MagnifyingGlassSolidIcon
-              fill={color}
-              width={size}
-              height={size} />
+            <MagnifyingGlassSolidIcon fill={color} width={size} height={size} />
           )
         }} />
 
@@ -56,10 +50,7 @@ const BottomTabNavigator = () => {
         options={{
           tabBarLabel: 'Sua Biblioteca',
           tabBarIcon: ({ color, size }) => (
-            <SwatchbookSolidIcon
-              fill={color}
-              width={size}
-              height={size} />
+            <SwatchbookSolidIcon fill={color} width={size} height={size} />
           )
         }} />
     </Tab.Navigator>
