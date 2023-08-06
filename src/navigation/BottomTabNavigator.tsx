@@ -1,20 +1,25 @@
 import { BottomTabNavigationOptions, createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Theme from './../stylesheets/theme';
+import { LinearGradient } from 'expo-linear-gradient';
 import HouseSolidIcon from './../components/icons/HouseSolid';
 import MagnifyingGlassSolidIcon from './../components/icons/MagnifyingGlassSolid';
 import SwatchbookSolidIcon from './../components/icons/SwatchbookSolid';
 import HomeScreen from './../screens/Home';
+import Theme from './../stylesheets/theme';
 
 const Tab = createBottomTabNavigator();
 
 const screenOptions: BottomTabNavigationOptions = {
   header: () => <></>,
-  headerBackground: () => <></>,
+  tabBarBackground: () => (
+    <LinearGradient
+      colors={['rgba(0, 0, 0, 0)', '#000']}
+      style={{ height: 48 }} />
+  ),
   tabBarStyle: {
-    backgroundColor: 'rgba(0, 0, 0, .5)',
     position: 'absolute',
     borderTopWidth: 0,
     elevation: 0,
+    height: 48,
   },
   tabBarActiveTintColor: Theme.colors.white,
   tabBarInactiveTintColor: Theme.colors.lightgray,

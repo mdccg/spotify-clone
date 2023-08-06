@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { StyleSheet } from 'react-native';
+import Eyedress from './../../../assets/images/eyedress.jpeg';
 import ArtistCard from './../../components/ArtistCard';
 import Highlight from './../../components/Highlight';
 import MixCard from './../../components/MixCard';
+import Theme from './../../stylesheets/theme';
 import ArtistType from './../../types/ArtistType';
 import MixType from './../../types/MixType';
-import Eyedress from './../../../assets/images/eyedress.jpeg';
-import Theme from './../../stylesheets/theme';
 import { getGreetings, isArtist } from './../../utils';
 import { BellRegularIcon, Carousel, ClockRegularIcon, FavoriteArtistsHeading, GapBetweenColumns, GearSolidIcon, Greetings, Header, Heading, HighlightsColumn, HighlightsGroup, HomeContainer, IconContainer, IconGroup, LooksLikeArtistName, LooksLikeContainer, LooksLikeLabel, LooksLikeLabelContainer, LooksLikePicture, RoundedTag, Tag, TagGroup, TagLabel, XMarkSolidIcon } from './styles';
 
@@ -43,18 +43,18 @@ const Home = () => {
     { name: 'Joe Hisaishi',   imageUrl: require('./../../../assets/images/joe-hisaishi.jpeg') },
     { name: 'The Weeknd',     imageUrl: require('./../../../assets/images/the-weeknd.jpeg') },
     { name: 'Tim Maia',       imageUrl: require('./../../../assets/images/tim-maia.jpeg') },
-    { name: 'Vinicius Maeda', imageUrl: require('./../../../assets/images/vinicius-maeda.png') }
+    { name: 'Vinicius Maeda', imageUrl: require('./../../../assets/images/vinicius-maeda.png') },
   ]);
   const [similarToEyedress] = useState<(MixType | ArtistType)[]>([
-    { title: 'Mrs Magic', description: 'Single • Strawberry Guy', imageUrl: require('./../../../assets/images/mrs-magic_single_strawberry-guy.jpeg') },
-    { title: 'F Song', description: 'Single • Strawberry Guy', imageUrl: require('./../../../assets/images/f-song_single_strawberry-guy.jpeg') },
-    { title: 'welcome and goodbye', description: 'Single • Dream, Ivory', imageUrl: require('./../../../assets/images/welcome-and-goodbye_single_dream-ivory.jpeg') },
+    { title: 'Mrs Magic',           description: 'Single • Strawberry Guy',        imageUrl: require('./../../../assets/images/mrs-magic_single_strawberry-guy.jpeg') },
+    { title: 'F Song',              description: 'Single • Strawberry Guy',        imageUrl: require('./../../../assets/images/f-song_single_strawberry-guy.jpeg') },
+    { title: 'welcome and goodbye', description: 'Single • Dream, Ivory',        imageUrl: require('./../../../assets/images/welcome-and-goodbye_single_dream-ivory.jpeg') },
     { description: 'Arctic Monkeys, Tyler, The Creator, The Neighbourhood e mais', imageUrl: require('./../../../assets/images/indie-gaming.jpeg') },
-    { description: 'Cigarettes After Sex, d4vd, Clairo, beabadoobee e mais', imageUrl: require('./../../../assets/images/lo-fi-indie.jpeg') },
-    { name: 'bôa', imageUrl: require('./../../../assets/images/boa.jpeg') },
-    { name: 'Roar', imageUrl: require('./../../../assets/images/roar.jpeg') },
-    { name: 'Duster', imageUrl: require('./../../../assets/images/duster.jpeg') },
-    { description: 'Steve Lacy, Cigarettes After Sex, Mac DeMarco e mais', imageUrl: require('./../../../assets/images/eyedress-radio.jpeg') },
+    { description: 'Cigarettes After Sex, d4vd, Clairo, beabadoobee e mais',       imageUrl: require('./../../../assets/images/lo-fi-indie.jpeg') },
+    { name: 'bôa',                  imageUrl: require('./../../../assets/images/boa.jpeg') },
+    { name: 'Roar',                 imageUrl: require('./../../../assets/images/roar.jpeg') },
+    { name: 'Duster',               imageUrl: require('./../../../assets/images/duster.jpeg') },
+    { description: 'Steve Lacy, Cigarettes After Sex, Mac DeMarco e mais',         imageUrl: require('./../../../assets/images/eyedress-radio.jpeg') },
   ]);
 
   const selectFilter = (newFilter: string) => {
@@ -147,12 +147,15 @@ const Home = () => {
       </LooksLikeContainer>
 
       <Carousel horizontal>
-        {similarToEyedress.map((object, index, array) => (
-          isArtist(object) ? (
-            <ArtistCard key={index} artist={object} isTheLastOne={index === array.length - 1} />
+        {similarToEyedress.map((object, index, array) => {
+          const isTheLastOne = index === array.length - 1;
+
+          return isArtist(object) ? (
+            <ArtistCard key={index} artist={object} isTheLastOne={isTheLastOne} />
           ) : (
-            <MixCard key={index} mix={object} isTheLastOne={index === array.length - 1} />
-          )))}
+            <MixCard key={index} mix={object} isTheLastOne={isTheLastOne} />
+          );
+        })}
       </Carousel>
     </HomeContainer>
   );

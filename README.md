@@ -16,11 +16,12 @@
 
 - [X] Mudar a paleta de cores
 - [X] Remover `expo-blur`
+- [X] Componentizar `Mix` e `Artist`
+- [X] Transformar todas as partes repetitivas do código-fonte em componentes
 - [ ] Adicionar as duas outras telas
 - [ ] Fazer com que o componente `TagGroup` seja fixo somente ao rolar a tela para baixo
 - [ ] Verificar se é viável adicionar um degradê com `zIndex` no navegador de abas inferiores
-- [ ] Componentizar `Mix` e `Artist`
-- [ ] Transformar todas as partes repetitivas do código-fonte em componentes
+- [ ] Substituir as mídias padrão do diretório `assets/`
 
 ## Motivação
 
