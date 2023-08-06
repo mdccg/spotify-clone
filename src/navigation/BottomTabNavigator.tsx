@@ -12,10 +12,11 @@ const screenOptions: BottomTabNavigationOptions = {
   header: () => <></>,
   tabBarBackground: () => (
     <LinearGradient
-      colors={['rgba(0, 0, 0, 0)', '#000']}
+      colors={['transparent', '#000']}
       style={{ height: 48 }} />
   ),
   tabBarStyle: {
+    paddingHorizontal: 32,
     position: 'absolute',
     borderTopWidth: 0,
     elevation: 0,

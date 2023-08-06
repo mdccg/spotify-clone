@@ -3,7 +3,7 @@ import { EllipsisSolidIcon, HighlightContainer, HighlightImage, HighlightIsPlayi
 
 type HighlightProps = {
   mix: MixType;
-  isPlaying: boolean;
+  isPlaying?: boolean;
 }
 
 const Highlight: React.FC<HighlightProps> = ({ mix, isPlaying }) => (

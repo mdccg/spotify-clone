@@ -1,14 +1,15 @@
 import { useState } from 'react';
-import { StyleSheet } from 'react-native';
+import { NativeScrollEvent, NativeSyntheticEvent, StyleSheet, View } from 'react-native';
 import Eyedress from './../../../assets/images/eyedress.jpeg';
 import ArtistCard from './../../components/ArtistCard';
 import Highlight from './../../components/Highlight';
 import MixCard from './../../components/MixCard';
-import Theme from './../../stylesheets/theme';
+import TagGroup from './../../components/TagGroup';
 import ArtistType from './../../types/ArtistType';
 import MixType from './../../types/MixType';
-import { getGreetings, isArtist } from './../../utils';
-import { BellRegularIcon, Carousel, ClockRegularIcon, FavoriteArtistsHeading, GapBetweenColumns, GearSolidIcon, Greetings, Header, Heading, HighlightsColumn, HighlightsGroup, HomeContainer, IconContainer, IconGroup, LooksLikeArtistName, LooksLikeContainer, LooksLikeLabel, LooksLikeLabelContainer, LooksLikePicture, RoundedTag, Tag, TagGroup, TagLabel, XMarkSolidIcon } from './styles';
+import { isArtist } from './../../utils';
+import { Carousel, FavoriteArtistsHeading, GapBetweenColumns, Heading, HighlightsColumn, HighlightsGroup, HomeContainer, LooksLikeArtistName, LooksLikeContainer, LooksLikeLabel, LooksLikeLabelContainer, LooksLikePicture } from './styles';
+import Header from '../../components/Header';
 
 const Home = () => {
   const [selectedFilter, setSelectedFilter] = useState<string | undefined>();
@@ -51,140 +52,117 @@ const Home = () => {
     { title: 'welcome and goodbye', description: 'Single • Dream, Ivory',        imageUrl: require('./../../../assets/images/welcome-and-goodbye_single_dream-ivory.jpeg') },
     { description: 'Arctic Monkeys, Tyler, The Creator, The Neighbourhood e mais', imageUrl: require('./../../../assets/images/indie-gaming.jpeg') },
     { description: 'Cigarettes After Sex, d4vd, Clairo, beabadoobee e mais',       imageUrl: require('./../../../assets/images/lo-fi-indie.jpeg') },
-    { name: 'bôa',                  imageUrl: require('./../../../assets/images/boa.jpeg') },
-    { name: 'Roar',                 imageUrl: require('./../../../assets/images/roar.jpeg') },
-    { name: 'Duster',               imageUrl: require('./../../../assets/images/duster.jpeg') },
+    { name: 'bôa',    imageUrl: require('./../../../assets/images/boa.jpeg') },
+    { name: 'Roar',   imageUrl: require('./../../../assets/images/roar.jpeg') },
+    { name: 'Duster', imageUrl: require('./../../../assets/images/duster.jpeg') },
     { description: 'Steve Lacy, Cigarettes After Sex, Mac DeMarco e mais',         imageUrl: require('./../../../assets/images/eyedress-radio.jpeg') },
   ]);
+  const [isTagGroupFixed, setIsTagGroupFixed] = useState<boolean>(false);
 
   const selectFilter = (newFilter: string) => {
     setSelectedFilter(newFilter === selectedFilter ? undefined : newFilter);
   }
 
+  const handleTagGroupBehavior = (event: NativeSyntheticEvent<NativeScrollEvent>) => {
+    const { y } = event.nativeEvent.contentOffset;
+    const tagGroupHeight = 48;
+    const lowerLimit = tagGroupHeight + 20; // Incluindo margem extra
+    const upperLimit = lowerLimit + 50; // Ajuste para a posição normal
+  
+    if (y > lowerLimit && !isTagGroupFixed) {
+      setIsTagGroupFixed(true);
+
+    } else if (y <= upperLimit && isTagGroupFixed) {
+      setIsTagGroupFixed(false);
+    }
+  }
+
   return (
-    <HomeContainer contentContainerStyle={styles.homeContainer} style={{ flex: 1 }}>
-      <Header>
-        <Greetings>
-          {getGreetings()}
-        </Greetings>
-      
-        <IconGroup>
-          <IconContainer>
-            <BellRegularIcon />
-          </IconContainer>
+    <>
+      {isTagGroupFixed && (
+        <TagGroup
+          selectedFilter={selectedFilter}
+          setSelectedFilter={setSelectedFilter}
+          filters={filters}
+          selectFilter={selectFilter}
+          isFixed={true} />
+      )}
 
-          <IconContainer>
-            <ClockRegularIcon />
-          </IconContainer>
-          
-          <IconContainer>
-            <GearSolidIcon />
-          </IconContainer>
-        </IconGroup>
-      </Header>
+      <HomeContainer
+        contentContainerStyle={styles.homeContainer}
+        onScroll={handleTagGroupBehavior}
+        style={{ flex: 1 }}>
 
-      <TagGroup contentContainerStyle={styles.tagGroup} horizontal>
-        {selectedFilter && (
-          <RoundedTag onPress={() => setSelectedFilter(undefined)}>
-            <XMarkSolidIcon />
-          </RoundedTag>
-        )}
+        <Header />
 
-        {filters.map((currentFilter) => {
-          const isSelected = currentFilter === selectedFilter;
+        {!isTagGroupFixed ? (
+          <TagGroup
+            selectedFilter={selectedFilter}
+            setSelectedFilter={setSelectedFilter}
+            filters={filters}
+            selectFilter={selectFilter}
+            isFixed={false} />
+        ) : <View style={{ height: 48 }} />}
 
-          return (!selectedFilter || isSelected) && (
-            <Tag
-              key={currentFilter}
-              style={isSelected ? styles.selectedTag : {}}
-              onPress={() => selectFilter(currentFilter)}>
-              <TagLabel style={isSelected ? styles.selectedTagLabel : {}}>
-                {currentFilter}
-              </TagLabel>
-            </Tag>
-          );
-        })}
-      </TagGroup>
+        <HighlightsGroup>
+          <HighlightsColumn>
+            {highlights.slice(0, 3).map((highlight, index) => (
+              <Highlight key={index} mix={highlight} isPlaying={index === 0} />
+            ))}
+          </HighlightsColumn>
 
-      <HighlightsGroup>
-        <HighlightsColumn>
-          {highlights.slice(0, 3).map((highlight, index) => (
-            <Highlight key={index} mix={highlight} isPlaying={index === 0} />
+          <GapBetweenColumns />
+
+          <HighlightsColumn>
+            {highlights.slice(3, 6).map((highlight, index) => (
+              <Highlight key={3 + index} mix={highlight} />
+            ))}
+          </HighlightsColumn>
+        </HighlightsGroup>
+
+        <Heading>Seus mixes mais ouvidos</Heading>
+
+        <Carousel horizontal>
+          {mostListenedMixes.map((mix, index, array) => (
+            <MixCard key={index} mix={mix} isTheLastOne={index === array.length - 1} />
           ))}
-        </HighlightsColumn>
+        </Carousel>
 
-        <GapBetweenColumns />
+        <FavoriteArtistsHeading>Seus artistas favoritos</FavoriteArtistsHeading>
 
-        <HighlightsColumn>
-          {highlights.slice(3, 6).map((highlight, index) => (
-            <Highlight key={3 + index} mix={highlight} isPlaying={3 + index === 0} />
+        <Carousel horizontal>
+          {favoriteArtists.map((artist, index, array) => (
+            <ArtistCard key={index} artist={artist} isTheLastOne={index === array.length - 1} />
           ))}
-        </HighlightsColumn>
-      </HighlightsGroup>
+        </Carousel>
 
-      <Heading>Seus mixes mais ouvidos</Heading>
+        <LooksLikeContainer>
+          <LooksLikePicture source={Eyedress} />
+          <LooksLikeLabelContainer>
+            <LooksLikeLabel>Parecido com</LooksLikeLabel>
+            <LooksLikeArtistName>Eyedress</LooksLikeArtistName>
+          </LooksLikeLabelContainer>
+        </LooksLikeContainer>
 
-      <Carousel horizontal>
-        {mostListenedMixes.map((mix, index, array) => (
-          <MixCard key={index} mix={mix} isTheLastOne={index === array.length - 1} />
-        ))}
-      </Carousel>
+        <Carousel horizontal>
+          {similarToEyedress.map((object, index, array) => {
+            const isTheLastOne = index === array.length - 1;
 
-      <FavoriteArtistsHeading>Seus artistas favoritos</FavoriteArtistsHeading>
-
-      <Carousel horizontal>
-        {favoriteArtists.map((artist, index, array) => (
-          <ArtistCard key={index} artist={artist} isTheLastOne={index === array.length - 1} />
-        ))}
-      </Carousel>
-
-      <LooksLikeContainer>
-        <LooksLikePicture source={Eyedress} />
-        <LooksLikeLabelContainer>
-          <LooksLikeLabel>Parecido com</LooksLikeLabel>
-          <LooksLikeArtistName>Eyedress</LooksLikeArtistName>
-        </LooksLikeLabelContainer>
-      </LooksLikeContainer>
-
-      <Carousel horizontal>
-        {similarToEyedress.map((object, index, array) => {
-          const isTheLastOne = index === array.length - 1;
-
-          return isArtist(object) ? (
-            <ArtistCard key={index} artist={object} isTheLastOne={isTheLastOne} />
-          ) : (
-            <MixCard key={index} mix={object} isTheLastOne={isTheLastOne} />
-          );
-        })}
-      </Carousel>
-    </HomeContainer>
+            return isArtist(object) ? (
+              <ArtistCard key={index} artist={object} isTheLastOne={isTheLastOne} />
+            ) : (
+              <MixCard key={index} mix={object} isTheLastOne={isTheLastOne} />
+            );
+          })}
+        </Carousel>
+      </HomeContainer>
+    </>
   );
 }
 
 const styles = StyleSheet.create({
   homeContainer: {
     paddingBottom: 160,
-  },
-
-  tagGroup: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingTop: 16,
-    paddingRight: 0,
-    paddingBottom: 16,
-    paddingLeft: 0,
-  },
-
-  selectedTag: {
-    backgroundColor: Theme.colors.green,
-  },
-
-  selectedTagLabel: {
-    color: Theme.colors.black
-  },
-
-  lastCarouselItem: {
-    marginRight: 0,
   },
 });
 
