@@ -20,8 +20,11 @@
 - [X] Transformar todas as partes repetitivas do código-fonte em componentes
 - [X] Verificar se é viável adicionar um degradê com `zIndex` no navegador de abas inferiores
 - [X] Fazer com que o componente `TagGroup` seja fixo somente ao rolar a tela para baixo
-- [ ] Adicionar as duas outras telas
+- [X] Adicionar a tela de pesquisa e seções
+- [ ] Adicionar a tela da biblioteca
 - [ ] Substituir as mídias padrão do diretório `assets/`
+- [ ] Comentar sobre a constante `disableFixedGroupHeightFeature` no README.md
+- [ ] Criar a barra de progresso do componente `Player`
 
 ## Motivação
 

@@ -4,6 +4,7 @@ import HouseSolidIcon from './../components/icons/HouseSolid';
 import MagnifyingGlassSolidIcon from './../components/icons/MagnifyingGlassSolid';
 import SwatchbookSolidIcon from './../components/icons/SwatchbookSolid';
 import HomeScreen from './../screens/Home';
+import SearchScreen from './../screens/Search';
 import Theme from './../stylesheets/theme';
 
 const Tab = createBottomTabNavigator();
@@ -42,7 +43,7 @@ const BottomTabNavigator = () => {
 
       <Tab.Screen
         name="Search"
-        component={HomeScreen}
+        component={SearchScreen}
         options={{
           tabBarLabel: 'Buscar',
           tabBarIcon: ({ color, size }) => (

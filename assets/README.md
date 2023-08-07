@@ -22,3 +22,4 @@
 - [Heart Classic Regular Icon | Font Awesome](https://fontawesome.com/icons/heart?f=classic&s=regular)
 - [Pause Classic Solid Icon | Font Awesome](https://fontawesome.com/icons/pause?f=classic&s=solid)
 - [Play Classic Solid Icon | Font Awesome](https://fontawesome.com/icons/play?f=classic&s=solid)
+- [Camera Classic Solid Icon | Font Awesome](https://fontawesome.com/icons/camera?f=classic&s=solid)

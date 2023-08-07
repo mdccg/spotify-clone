@@ -9,7 +9,10 @@ import ArtistType from './../../types/ArtistType';
 import MixType from './../../types/MixType';
 import { isArtist } from './../../utils';
 import { Carousel, FavoriteArtistsHeading, GapBetweenColumns, Heading, HighlightsColumn, HighlightsGroup, HomeContainer, LooksLikeArtistName, LooksLikeContainer, LooksLikeLabel, LooksLikeLabelContainer, LooksLikePicture } from './styles';
-import Header from '../../components/Header';
+import Header from './../../components/Header';
+
+const tagGroupHeight = 48;
+const disableFixedGroupHeightFeature = true;
 
 const Home = () => {
   const [selectedFilter, setSelectedFilter] = useState<string | undefined>();
@@ -65,21 +68,18 @@ const Home = () => {
 
   const handleTagGroupBehavior = (event: NativeSyntheticEvent<NativeScrollEvent>) => {
     const { y } = event.nativeEvent.contentOffset;
-    const tagGroupHeight = 48;
-    const lowerLimit = tagGroupHeight + 20; // Incluindo margem extra
-    const upperLimit = lowerLimit + 50; // Ajuste para a posição normal
+    const limit = tagGroupHeight + 20;
   
-    if (y > lowerLimit && !isTagGroupFixed) {
+    if (y > limit && !isTagGroupFixed) {
       setIsTagGroupFixed(true);
-
-    } else if (y <= upperLimit && isTagGroupFixed) {
+    } else if (y <= limit && isTagGroupFixed) {
       setIsTagGroupFixed(false);
     }
   }
 
   return (
     <>
-      {isTagGroupFixed && (
+      {!disableFixedGroupHeightFeature && isTagGroupFixed && (
         <TagGroup
           selectedFilter={selectedFilter}
           setSelectedFilter={setSelectedFilter}
@@ -90,19 +90,19 @@ const Home = () => {
 
       <HomeContainer
         contentContainerStyle={styles.homeContainer}
-        onScroll={handleTagGroupBehavior}
+        onScroll={disableFixedGroupHeightFeature ? undefined : handleTagGroupBehavior}
         style={{ flex: 1 }}>
 
         <Header />
 
-        {!isTagGroupFixed ? (
+        {disableFixedGroupHeightFeature || !isTagGroupFixed ? (
           <TagGroup
             selectedFilter={selectedFilter}
             setSelectedFilter={setSelectedFilter}
             filters={filters}
             selectFilter={selectFilter}
             isFixed={false} />
-        ) : <View style={{ height: 48 }} />}
+        ) : <View style={{ height: tagGroupHeight }} />}
 
         <HighlightsGroup>
           <HighlightsColumn>
