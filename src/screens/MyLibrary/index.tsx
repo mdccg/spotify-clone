@@ -3,7 +3,7 @@ import MatheusGomes from './../../../assets/images/matheus-gomes.jpg';
 import TagGroup from './../../components/TagGroup';
 import ArtistType from './../../types/ArtistType';
 import PlaylistType from './../../types/PlaylistType';
-import { ChangeViewContainer, FilterContainer, Header, Heading, IconContainer, IconGroup, ListSolidIcon, MagnifyingGlassSolidIcon, MyLibraryContainer, MyProfileContainer, MyProfilePicture, SavedStuffContainer, SelectedClassification, SortByContainer, SortSolidIcon, SortSolidIconContainer, SquaresRegularIcon, TagGroupWrapper, TinyPlusSolidIcon } from './styles';
+import { ChangeViewContainer, FilterContainer, Header, Heading, IconContainer, IconGroup, ListSolidIcon, MagnifyingGlassSolidIcon, MyLibraryContainer, MyProfileContainer, MyProfilePicture, OuterHeader, SavedStuffContainer, SelectedClassification, SortByContainer, SortSolidIcon, SortSolidIconContainer, SquaresRegularIcon, TagGroupWrapper, TinyPlusSolidIcon } from './styles';
 import PlaylistItemList from './../../components/PlaylistItemList';
 import { isArtist } from './../../utils';
 import { StyleSheet } from 'react-native';
@@ -34,57 +34,62 @@ const MyLibrary = () => {
   }
 
   return (
-    <MyLibraryContainer contentContainerStyle={styles.myLibraryContainer}>
-      <Header>
-        <MyProfileContainer>
-          <MyProfilePicture source={MatheusGomes} />
-          <Heading>Sua Biblioteca</Heading>
-        </MyProfileContainer>
+    <>
+      <OuterHeader>
+        <Header>
+          <MyProfileContainer>
+            <MyProfilePicture source={MatheusGomes} />
+            <Heading>Sua Biblioteca</Heading>
+          </MyProfileContainer>
 
-        <IconGroup>
-          <IconContainer>
-            <MagnifyingGlassSolidIcon />
-          </IconContainer>
+          <IconGroup>
+            <IconContainer>
+              <MagnifyingGlassSolidIcon />
+            </IconContainer>
 
-          <IconContainer>
-            <TinyPlusSolidIcon />
-          </IconContainer>
-        </IconGroup>
-      </Header>
+            <IconContainer>
+              <TinyPlusSolidIcon />
+            </IconContainer>
+          </IconGroup>
+        </Header>
 
-      <TagGroupWrapper>
-        <TagGroup
-          selectedFilter={selectedFilter}
-          setSelectedFilter={setSelectedFilter}
-          filters={filters}
-          selectFilter={selectFilter}
-          isFixed={false} />
-      </TagGroupWrapper>
+        <TagGroupWrapper>
+          <TagGroup
+            selectedFilter={selectedFilter}
+            setSelectedFilter={setSelectedFilter}
+            filters={filters}
+            selectFilter={selectFilter}
+            isFixed={false} />
+        </TagGroupWrapper>
+      </OuterHeader>
 
-      <SavedStuffContainer>
-        <FilterContainer>
-          <SortByContainer>
-            <SortSolidIconContainer>
-              <SortSolidIcon />
-            </SortSolidIconContainer>
-            
-            <SelectedClassification>{selectedClassification}</SelectedClassification>
-          </SortByContainer>
+      <MyLibraryContainer contentContainerStyle={styles.myLibraryContainer}>
 
-          <ChangeViewContainer onPress={() => setViewAsList(!viewAsList)}>
-            {viewAsList ? <SquaresRegularIcon /> : <ListSolidIcon />}
-          </ChangeViewContainer>
-        </FilterContainer>
+        <SavedStuffContainer>
+          <FilterContainer>
+            <SortByContainer>
+              <SortSolidIconContainer>
+                <SortSolidIcon />
+              </SortSolidIconContainer>
+              
+              <SelectedClassification>{selectedClassification}</SelectedClassification>
+            </SortByContainer>
 
-        {playlists.map((object, index) => (
-          isArtist(object) ? (
-            <></>
-          ) : (
-            <PlaylistItemList key={index} playlist={object} isPlaying={index === 0} />
-          )
-        ))}
-      </SavedStuffContainer>
-    </MyLibraryContainer>
+            <ChangeViewContainer onPress={() => setViewAsList(!viewAsList)}>
+              {viewAsList ? <SquaresRegularIcon /> : <ListSolidIcon />}
+            </ChangeViewContainer>
+          </FilterContainer>
+
+          {playlists.map((object, index) => (
+            isArtist(object) ? (
+              <></>
+            ) : (
+              <PlaylistItemList key={index} playlist={object} isPlaying={index === 0} />
+            )
+          ))}
+        </SavedStuffContainer>
+      </MyLibraryContainer>
+    </>
   );
 }
 

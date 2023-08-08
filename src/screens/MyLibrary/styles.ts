@@ -13,6 +13,10 @@ export const MyLibraryContainer = styled.ScrollView`
   background-color: ${({ theme }) => theme.colors.black};
 `;
 
+export const OuterHeader = styled.View`
+  background-color: ${({ theme }) => theme.colors.black};
+`;
+
 export const Header = styled.View`
   ${gutter};
   justify-content: space-between;
