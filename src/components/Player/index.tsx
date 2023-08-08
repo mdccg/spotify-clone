@@ -1,14 +1,14 @@
+import { Audio } from 'expo-av';
 import { useState } from 'react';
 import MullholandDrive from './../../../assets/images/mullholand-drive.jpeg';
-import { Controls, HeartSolidIcon, IconContainer, MusicAuthor, MusicDetails, MusicName, MusicPicture, PauseSolidIcon, PlaySolidIcon, PlayerContainer } from './styles';
-import HeartRegularIcon from './../icons/HeartRegular';
 import Theme from './../../stylesheets/theme';
-import { Audio } from 'expo-av';
 import AvPlaybackStatus from './../../types/AvPlaybackStatus';
+import HeartRegularIcon from './../icons/HeartRegular';
+import { Controls, HeartSolidIcon, IconContainer, MusicAuthor, MusicDetails, MusicName, MusicPicture, PauseSolidIcon, PlaySolidIcon, PlayerContainer } from './styles';
 
 const Player = () => {
   const [music, setMusic] = useState<Audio.Sound | undefined>();
-  const [isLiked, setIsLiked] = useState<boolean>(false);
+  const [isLiked, setIsLiked] = useState<boolean>(true);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [endHandler, setEndHandler] = useState<NodeJS.Timeout | undefined>();
 

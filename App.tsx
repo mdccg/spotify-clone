@@ -8,6 +8,7 @@ import StatusBar from './src/components/StatusBar';
 import BottomTabNavigator from './src/navigation/BottomTabNavigator';
 import Theme from './src/stylesheets/theme';
 import Player from './src/components/Player';
+import { UserContextProvider } from './src/context/UserContext';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -49,8 +50,10 @@ const App = () => {
 
       <ThemeProvider theme={Theme}>
         <NavigationContainer>
-          <BottomTabNavigator />
-          <Player />
+          <UserContextProvider>
+            <BottomTabNavigator />
+            <Player />
+          </UserContextProvider>
         </NavigationContainer>
       </ThemeProvider>
     </SafeAreaView>

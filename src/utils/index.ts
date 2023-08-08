@@ -16,3 +16,13 @@ export const getGreetings = (): string => {
 }
 
 export const isArtist = (object: any | ArtistType): object is ArtistType => 'name' in object;
+
+export const divideArray = (inputArray: any[], chunkSize: number) => {
+  const dividedArray = [];
+  
+  for (let i = 0; i < inputArray.length; i += chunkSize) {
+    dividedArray.push(inputArray.slice(i, i + chunkSize));
+  }
+
+  return dividedArray;
+}

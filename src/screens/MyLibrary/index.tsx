@@ -12,7 +12,7 @@ const MyLibrary = () => {
   const [selectedFilter, setSelectedFilter] = useState<string | undefined>();
   const [filters] = useState<string[]>(['Playlists', 'Álbuns', 'Artistas', 'Baixado']);
   const [selectedClassification] = useState<string>('Recentes');
-  const [classifications] = useState<string[]>(['Recentes', 'Adicionados recentemente', 'Ordem alfabética', 'Criador']);
+  // const [classifications] = useState<string[]>(['Recentes', 'Adicionados recentemente', 'Ordem alfabética', 'Criador']);
   const [viewAsList, setViewAsList] = useState<boolean>(true);
   const [playlists] = useState<(PlaylistType | ArtistType)[]>([
     { title: 'Músicas Curtidas', imageUrl: require('./../../../assets/images/musicas-curtidas.png'), category: 'Playlist', songCount: 320, isPinned: true, isDownloaded: true },
@@ -76,11 +76,11 @@ const MyLibrary = () => {
           </ChangeViewContainer>
         </FilterContainer>
 
-        {playlists.map((object) => (
+        {playlists.map((object, index) => (
           isArtist(object) ? (
             <></>
           ) : (
-            <PlaylistItemList key={object.title} playlist={object} />
+            <PlaylistItemList key={index} playlist={object} isPlaying={index === 0} />
           )
         ))}
       </SavedStuffContainer>

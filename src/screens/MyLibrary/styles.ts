@@ -85,6 +85,8 @@ export const FilterContainer = styled.View`
   justify-content: space-between;
   flex-direction: row;
   align-items: center;
+
+  margin-bottom: 16px;
 `;
 
 export const SortByContainer = styled.TouchableOpacity`

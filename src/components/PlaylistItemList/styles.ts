@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components/native';
 import RawPinSolidIcon from './../icons/PinSolid';
 import RawCircleArrowDownSolidIcon from './../icons/CircleArrowDownSolid';
 
-export const PlaylistItemListContainer = styled.View`
+export const PlaylistItemListContainer = styled.TouchableOpacity`
   flex-direction: row;
   align-items: center;
 
@@ -25,7 +25,7 @@ export const PlaylistDataContainer = styled.View`
 export const PlaylistTitle = styled.Text`
   font-family: ${({ theme }) => theme.fonts.gotham.gothamMedium};
   color: ${({ theme }) => theme.colors.white};
-  font-size: 16px;
+  font-size: 15px;
 `;
 
 export const PlaylistDetails = styled.View`
@@ -56,3 +56,5 @@ export const ExtraInformation = styled.Text`
   color: ${({ theme }) => theme.colors.lightgray};
   font-size: 12px;
 `;
+
+[PlaylistTitle, ExtraInformation].map((e) => (e.defaultProps = { numberOfLines: 1 }));

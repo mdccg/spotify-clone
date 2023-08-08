@@ -21,19 +21,22 @@
 - [X] Verificar se é viável adicionar um degradê com `zIndex` no navegador de abas inferiores
 - [X] Fazer com que o componente `TagGroup` seja fixo somente ao rolar a tela para baixo
 - [X] Adicionar a tela de pesquisa e seções
-- [ ] Adicionar a tela da biblioteca
+- [X] Adicionar a tela da biblioteca
+- [X] Comentar sobre a constante `disableFixedGroupHeightFeature` e web scraping no README.md
+- [X] Adicionar contexto de usuário para o nome ~~e a música que está sendo tocada~~
 - [ ] Substituir as mídias padrão do diretório `assets/`
-- [ ] Comentar sobre a constante `disableFixedGroupHeightFeature` no README.md
 - [ ] Criar a barra de progresso do componente `Player`
 - [ ] Verificar se é viável animar o componente `TagGroup` 
 
 ## Motivação
 
-Este app é um clone simples do Spotify, projetado para simular de forma básica a experiência do aplicativo original. É importante notar que este clone não possui acesso à API do Spotify e, portanto, não é capaz de reproduzir músicas ou fornecer conteúdo em tempo real.
+Este aplicativo é um clone simples do Spotify, projetado para simular, de forma básica, a experiência do aplicativo original.
 
-O objetivo deste clone é oferecer uma interface minimalista, permitindo que os usuários naveguem pelas principais seções do aplicativo, como a página inicial, listas de reprodução, artistas e álbuns. Apesar de não possuir recursos avançados ou funcionalidades completas, o aplicativo busca fornecer uma visão geral do design e da estrutura do Spotify original.
+O objetivo principal deste clone é oferecer uma interface minimalista que permita aos usuários explorar as principais seções do aplicativo, como a página inicial, listas de reprodução, artistas e álbuns. Embora não contenha recursos avançados ou funcionalidades completas, ele fornece uma visão geral do design e da estrutura do aplicativo original do Spotify.
 
-Este clone é desenvolvido como uma aplicação frontend, o que significa que não há integração com servidores ou bancos de dados. Todos os dados são estáticos e previamente definidos no código. Portanto, o app não oferece recursos de busca, login ou reprodução de músicas.
+Vale ressaltar que esse clone não possui acesso à API oficial do Spotify. Por esse motivo, não é capaz de reproduzir músicas em tempo real ou fornecer conteúdo dinâmico. O aplicativo foi desenvolvido com base em web scraping do site do Spotify, o que significa que ele contém mídias fielmente replicadas do app original.
+
+Observação: No arquivo [`Home/index.tsx`](./src/screens/Home/index.tsx), você encontrará uma constante chamada `disableFixedGroupHeightFeature` que permite habilitar ou desabilitar uma funcionalidade. Essa funcionalidade foi criada como uma resposta à especificação do mockup, mas não ficou esteticamente agradável. Ela oferece a opção de priorizar a aderência estrita à especificação, mesmo que isso possa impactar a estética do design.
 
 Este foi o primeiro repositório de código apresentado no [Curso Superior de TSI](https://www.ifms.edu.br/campi/campus-aquidauana/cursos/graduacao/sistemas-para-internet/sistemas-para-internet) do IFMS como requisito para obtenção da nota parcial das atividades da unidade curricular Programação para Dispositivos Móveis II.
 
