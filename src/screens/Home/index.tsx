@@ -162,7 +162,7 @@ const Home = () => {
 
 const styles = StyleSheet.create({
   homeContainer: {
-    paddingBottom: 160,
+    paddingBottom: 192,
   },
 });
 

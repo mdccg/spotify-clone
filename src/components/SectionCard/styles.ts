@@ -5,8 +5,8 @@ export const SectionCardContainer = styled.TouchableOpacity`
 
   padding: 16px 0 0 16px;
   border-radius: 4px;
-  height: 100px;
   overflow: hidden;
+  height: 90px;
 
   margin-bottom: 16px;
 `;
@@ -15,7 +15,6 @@ export const SectionTitle = styled.Text`
   font-family: ${({ theme }) => theme.fonts.gotham.gothamBold};
   color: ${({ theme }) => theme.colors.white};
   font-size: 14px;
-
   line-height: 20px;
 
   width: 80%;

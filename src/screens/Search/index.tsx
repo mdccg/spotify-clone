@@ -118,7 +118,7 @@ const Search = () => {
 
 const styles = StyleSheet.create({
   searchContainer: {
-    paddingBottom: 160,
+    paddingBottom: 192,
   },
 });
 

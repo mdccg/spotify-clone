@@ -4,6 +4,7 @@ import HouseSolidIcon from './../components/icons/HouseSolid';
 import MagnifyingGlassSolidIcon from './../components/icons/MagnifyingGlassSolid';
 import SwatchbookSolidIcon from './../components/icons/SwatchbookSolid';
 import HomeScreen from './../screens/Home';
+import MyLibraryScreen from './../screens/MyLibrary';
 import SearchScreen from './../screens/Search';
 import Theme from './../stylesheets/theme';
 
@@ -53,7 +54,7 @@ const BottomTabNavigator = () => {
 
       <Tab.Screen
         name="YourLibrary"
-        component={HomeScreen}
+        component={MyLibraryScreen}
         options={{
           tabBarLabel: 'Sua Biblioteca',
           tabBarIcon: ({ color, size }) => (

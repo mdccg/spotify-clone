@@ -25,6 +25,7 @@
 - [ ] Substituir as mídias padrão do diretório `assets/`
 - [ ] Comentar sobre a constante `disableFixedGroupHeightFeature` no README.md
 - [ ] Criar a barra de progresso do componente `Player`
+- [ ] Verificar se é viável animar o componente `TagGroup` 
 
 ## Motivação
 

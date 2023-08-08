@@ -7,7 +7,7 @@ import RawPlaySolidIcon from './../icons/PlaySolid';
 export const PlayerContainer = styled.TouchableOpacity`
   position: absolute;
   align-self: center;
-  bottom: 48px;
+  bottom: 64px;
   
   background-color: ${({ theme }) => theme.colors.purple};
   padding: 8px;

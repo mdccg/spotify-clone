@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleProp, StyleSheet, ViewStyle } from 'react-native';
 import Theme from './../../stylesheets/theme';
 import { RoundedTag, Tag, TagGroupContainer, FixedTagGroupWrapper, TagLabel, XMarkSolidIcon } from './styles';
 
@@ -9,6 +9,7 @@ type TagGroupProps = {
   filters: string[];
   selectFilter: (newFilter: string) => void;
   isFixed: boolean;
+  style?: StyleProp<ViewStyle>;
 }
 
 const TagGroup: React.FC<TagGroupProps> = ({
@@ -17,12 +18,13 @@ const TagGroup: React.FC<TagGroupProps> = ({
   filters,
   selectFilter,
   isFixed,
+  style
 }) => {
   const Wrapper = isFixed ? FixedTagGroupWrapper : Fragment;
 
   return (
     <Wrapper>
-      <TagGroupContainer contentContainerStyle={styles.tagGroup} horizontal>
+      <TagGroupContainer contentContainerStyle={[styles.tagGroup, style]} horizontal>
         {selectedFilter && (
           <RoundedTag onPress={() => setSelectedFilter(undefined)}>
             <XMarkSolidIcon />

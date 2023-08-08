@@ -1,5 +1,14 @@
 # Créditos pelas mídias utilizadas
 
+## Sumário
+
+- [Créditos pelas mídias utilizadas](#créditos-pelas-mídias-utilizadas)
+  - [Sumário](#sumário)
+  - [Fontes tipográficas](#fontes-tipográficas)
+  - [Paleta de cores](#paleta-de-cores)
+  - [Ícones](#ícones)
+  - [Imagens](#imagens)
+
 ## Fontes tipográficas
 
 - [Spotify - Dafont Free](https://www.dafontfree.co/downloads/spotify/#google_vignette)
@@ -23,3 +32,13 @@
 - [Pause Classic Solid Icon | Font Awesome](https://fontawesome.com/icons/pause?f=classic&s=solid)
 - [Play Classic Solid Icon | Font Awesome](https://fontawesome.com/icons/play?f=classic&s=solid)
 - [Camera Classic Solid Icon | Font Awesome](https://fontawesome.com/icons/camera?f=classic&s=solid)
+- [Plus Classic Solid Icon | Font Awesome](https://fontawesome.com/icons/plus?f=classic&s=solid)
+- [Sort icon - Free download on Iconfinder](https://www.iconfinder.com/icons/9041919/sort_icon)
+- [Squares, four icon - Free download on Iconfinder](https://www.iconfinder.com/icons/9026096/squares_four_icon)
+- [List Classic Solid Icon | Font Awesome](https://fontawesome.com/icons/list?f=classic&s=solid)
+- [Pin, angle, fill icon - Free download on Iconfinder](https://www.iconfinder.com/icons/9041215/pin_angle_fill_icon)
+- [Circle Arrow Down Classic Solid Icon | Font Awesome](https://fontawesome.com/icons/circle-arrow-down?f=classic&s=solid)
+
+## Imagens
+
+- [Spotify – Web player: música para todas as pessoas](https://open.spotify.com/intl-pt)
