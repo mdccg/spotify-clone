@@ -1,9 +1,9 @@
 import styled, { css } from 'styled-components/native';
+import RawListSolidIcon from './../../components/icons/ListSolid';
 import RawMagnifyingGlassSolidIcon from './../../components/icons/MagnifyingGlassSolid';
 import RawPlusSolidIcon from './../../components/icons/PlusSolid';
 import RawSortSolidIcon from './../../components/icons/SortSolid';
 import RawSquaresRegularIcon from './../../components/icons/SquaresRegular';
-import RawListSolidIcon from './../../components/icons/ListSolid';
 
 const gutter = css`
   padding: 32px 16px 0;

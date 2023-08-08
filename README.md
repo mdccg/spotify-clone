@@ -55,7 +55,9 @@ Os créditos pelas mídias disponibilizadas estão disponíveis [aqui](./assets/
 
 ## Galeria
 
-<!-- Galeria aqui -->
+![Início](./docs/inicio.jpg)
+![Buscar](./docs/buscar.jpg)
+![Sua Biblioteca](./docs/sua-biblioteca.jpg)
 
 ## Como rodar
 
