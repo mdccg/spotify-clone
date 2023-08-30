@@ -40,7 +40,7 @@ Observação: No arquivo [`Home/index.tsx`](./src/screens/Home/index.tsx), você
 
 Este foi o primeiro repositório de código apresentado no [Curso Superior de TSI](https://www.ifms.edu.br/campi/campus-aquidauana/cursos/graduacao/sistemas-para-internet/sistemas-para-internet) do IFMS como requisito para obtenção da nota parcial das atividades da unidade curricular Programação para Dispositivos Móveis II.
 
-| [Próximo repositório &rarr;](#) |
+| [Próximo repositório &rarr;](https://github.com/mdccg/muzy-simple-calc) |
 |-|
 
 ## Pilha de tecnologia
